@@ -4,12 +4,6 @@ import xml.etree.ElementTree as ET
 import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
 
-Entrez.email="samhitapn.96@gmail.com"
-
-potatoGenomes_list = Entrez.esearch(db="sra", term='"Solanum tuberosum"[Organism] AND "wgs"[Strategy] AND "genomic"[Source] AND "2015"[Publication Date]:"3000"[Publication Date]')
-
-potatoGenomes_dataAll = Entrez.read(potatoGenomes_list)
-
 def get_xml_parentChild(data, parentKey, childKey):
     for k in data.findall(parentKey):
         value = k.get(childKey)
@@ -22,7 +16,13 @@ def get_attribute(data,term):
 def get_xml_parentText(data,parentKey):
     value = data.find(parentKey).text
     return(value)
-    
+
+Entrez.email="samhitapn.96@gmail.com"
+
+potatoGenomes_list = Entrez.esearch(db="sra", term='"Solanum tuberosum"[Organism] AND "wgs"[Strategy] AND "genomic"[Source] AND "2015"[Publication Date]:"3000"[Publication Date]')
+
+potatoGenomes_dataAll = Entrez.read(potatoGenomes_list)
+
 GENOMES_LIST = []
 for i in potatoGenomes_dataAll['IdList']:
      summary = Entrez.esummary(db = "sra",id = i)
