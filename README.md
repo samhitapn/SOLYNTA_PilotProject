@@ -49,7 +49,7 @@ Install the django-crontab via :
     
  2. Go to the following folder:
 
-        cd potatoGenome_SolyntaTask/potatoGenomeTask
+        cd SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask
     Refer https://pypi.org/project/django-crontab/, for further information on django-crontab.
 
 ## Running the SOLYNTA Whole Genome Dashboard application
@@ -70,7 +70,7 @@ Install the django-crontab via :
 
         python manage.py crontab add
     Currently, running this will initiate a schedule to refresh the database once every 10 mins.
-    This frequency of the refresh can be configured by changing the value in the CRONJOBS section of ```~/potatoGenome_SolyntaTask/potatoGenomTask/settings.py``` file.
+    This frequency of the refresh can be configured by changing the value in the CRONJOBS section of ```~/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomTask/settings.py``` file.
     
     For further details on how to configure the frequency, please refer to : https://cloud.google.com/scheduler/docs/configuring/cron-job-schedules.
     
@@ -86,14 +86,14 @@ Install the django-crontab via :
     
         http://127.0.0.1:8000/potatoGenome
     The app uses DataTables and the example styling provided in : https://datatables.net/examples/data_sources/dom.
-    This can be updated by changing the html template provided in ```~/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenome/templates/potatoGenome/index.html```
+    This can be updated by changing the html template provided in ```~/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenome/templates/potatoGenome/index.html```
         
  ## Additional instructions
  
  1. To see when the database was recently refreshed, please refer the log file in :
         
-        ~/potatoGenome_SolyntaTask/logfile.log
+        ~/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/logfile.log
    Please point the path to the log file by updating the path to a prefered location in the file ```~/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenomTask/settings.py``` in the filename of the LOGGING section.
    
- 2. Change the value to ```Entrez.email``` in ```~/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenome/getPotatoGenomes.py``` to provide your own email for reference to NCBI.
+ 2. Change the value to ```Entrez.email``` in ```~/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenome/getPotatoGenomes.py``` to provide your own email for reference to NCBI.
     
