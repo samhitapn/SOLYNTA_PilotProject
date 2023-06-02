@@ -100,7 +100,7 @@ Install Biopython via :
  1. To see when the database was recently refreshed, please refer the log file in :
         
         ~/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/logfile.log
-   Please point the path to the log file by updating the path to a prefered location in the file ```~/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenomTask/settings.py``` in the filename of the LOGGING section.
+   Please point the path to the log file by updating the path to a prefered location in the file ```~/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenomTask/settings.py``` in the filename of the LOGGING section.
    
- 2. Change the value to ```Entrez.email``` in ```~/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenome/getPotatoGenomes.py``` to provide your own email for reference to NCBI.
+ 2. Change the value of ```Entrez.email``` in ```~/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenome/getPotatoGenomes.py``` to provide your own email for reference to NCBI.
     
