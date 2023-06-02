@@ -7,6 +7,7 @@ This is a dashboard, built using Django, to display the details of potato whole 
 1. Python3
 2. Django
 3. Django_crontab
+4. Biopython
 
 ## Software Installations
 #### Python3
@@ -40,6 +41,12 @@ To download and install Django, follow the instructions detailed in this page ba
 Install the django-crontab via : 
   
     pip install django-crontab
+    
+#### Biopython
+
+Install Biopython via : 
+ 
+    pip install biopython
 
 ## Installing the SOLYNTA Whole Genome Dashboard application
 
