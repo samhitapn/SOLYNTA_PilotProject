@@ -15,7 +15,7 @@ To download and install Python3 please refer to https://www.python.org/downloads
 
 #### Django
 
-To download and install Django, follow the instructions detailed in this page based on yo : https://docs.djangoproject.com/en/4.2/intro/contributing/.
+To download and install Django, follow the instructions detailed in this page based on your operating system : https://docs.djangoproject.com/en/4.2/topics/install/.
 
  or follow the following steps (via terminal for creating a virtual environment on unix based operating systems or Mac):
  
