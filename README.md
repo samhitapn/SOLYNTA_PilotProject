@@ -85,13 +85,15 @@ Install the django-crontab via :
     Now you can access the application/ potato whole genome dashboard via :
     
         http://127.0.0.1:8000/potatoGenome
+    The app uses DataTables and the example styling provided in : https://datatables.net/examples/data_sources/dom.
+    This can be updated by changing the html template provided in ```~/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenome/templates/potatoGenome/index.html```
         
  ## Additional instructions
  
  1. To see when the database was recently refreshed, please refer the log file in :
         
         ~/potatoGenome_SolyntaTask/logfile.log
-   Please point the path to the log file by updating the path to a prefered location in the file ```~/potatoGenome_SolyntaTask/potatoGenomTask/settings.py``` in the filename of the LOGGING section.
+   Please point the path to the log file by updating the path to a prefered location in the file ```~/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenomTask/settings.py``` in the filename of the LOGGING section.
    
- 2. Change the value to ```Entrez.email``` in ```~/potatoGenome_SolyntaTask/potatoGenom/getPotatoGenomes.py``` to provide your own email for reference to NCBI.
+ 2. Change the value to ```Entrez.email``` in ```~/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenome/getPotatoGenomes.py``` to provide your own email for reference to NCBI.
     
