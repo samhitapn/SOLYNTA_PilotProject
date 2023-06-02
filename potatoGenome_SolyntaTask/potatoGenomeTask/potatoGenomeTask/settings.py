@@ -138,7 +138,7 @@ LOGGING = {
         'file': {
             'level': 'INFO',
             'class': 'logging.FileHandler',
-            'filename': '/Users/samhita/potatoGenome_SolyntaTask/logfile.log',  # Specify the path to your log file
+            'filename': '/Users/samhita/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/logfile.log',  # Specify the path to your log file
         },
     },
     'root': {
