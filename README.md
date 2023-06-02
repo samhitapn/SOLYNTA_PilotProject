@@ -34,7 +34,7 @@ To download and install Django, follow the instructions detailed in this page ba
          
  4. Install the previously cloned django git repository
  
-        python3 -m pip install -e /path/to/your/local/clone/django/    #Replace path with the location of the django clone in your local system 
+        python -m pip install -e /path/to/your/local/clone/django/    #Replace path with the location of the django clone in your local system 
 
 #### Django_crontab
 
