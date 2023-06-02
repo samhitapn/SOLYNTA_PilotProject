@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <style>
+            h1 {
+              text-align: center;
+            }
+            p {
+             font-size: 20px;
+            }
+        </style>
+        
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+        
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js"></script>
+
+        <title>Potato Genome Dashboard</title>
+    </head>
+    <body>
+        <h1>Potato Whole Genome Dashboard</h1>
+        
+        <p> Click on the Run ID to check sequence download options. The link opens in a new tab.</p>
+        <p></p>
+        <table id="table" class="display" style="width:100%">
+          <thead>
+                  <tr>
+                      <th>Genome ID</th>
+                      <th>Project Title</th>
+                      <th>Run ID</th>
+                      <th>Published Date</th>
+                      <th>Sequencing Platform</th>
+                      <th>Publication Link</th>
+
+                  </tr>
+          </thead>
+          <tbody>
+          {% for g in genomes %}
+          <tr>
+            <td>{{g.genome_Id}}</td>
+            <td>{{g.project_Title}}</td>
+            <td><a href = "{{pTitle_p1}}{{g.run_Id}}{{pTitle_p2}}&display=data-access" target="_blank">{{g.run_Id}}</a></td>
+            <td>{{g.published_Date}}</td>
+            <td>{{g.sequencing_Platform}}</td>
+            <td>{% if g.publication_Link != "Not Available" %}
+                <a href="{{g.publication_link}}" target="_blank">Visit publication</a>
+                {% else %}
+                    Not available
+                {% endif %}
+            </td>
+            
+          </tr>
+          {% endfor %}
+            </tbody>
+        </table>
+        
+        <script>
+            $(document).ready(function () {
+                $('#table').DataTable();
+            });
+        </script>
+    </body>
+</html>
+    
+    
