@@ -17,11 +17,11 @@ To download and install Python3 please refer to https://www.python.org/downloads
 
 To download and install Django, follow the instructions detailed in this page based on yo : https://docs.djangoproject.com/en/4.2/intro/contributing/.
 
- or follow the following steps (via terminal for unix based operating systems or Mac):
+ or follow the following steps (via terminal for creating a virtual environment on unix based operating systems or Mac):
  
  1. Clone the git repositry 
             
-         git clone https://github.com/YourGitHubName/django.git
+         git clone https://github.com/django/django.git
   
  2. Create a virtual environment
 
