@@ -68,10 +68,7 @@ Install Biopython via :
        python manage.py sqlmigrate potatoGenome 0001
 
        python manage.py migrate
-       
-2.  To fetch the necessary data once, run the following command:
- 
-        python manage.py getGenomes
+
         
 3.  To initiate the database refresh on regular intervals, run the following command:
 
