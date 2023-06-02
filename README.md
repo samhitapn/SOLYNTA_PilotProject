@@ -45,7 +45,7 @@ Install the django-crontab via :
 
 1. To install the SOLYNTA Whole Genome Potato Dashboard, first clone the following repository:
 
-       git clone 
+       git clone git@github.com:samhitapn/SOLYNTA_PilotProject.git
     
  2. Go to the following folder:
 
