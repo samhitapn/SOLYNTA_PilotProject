@@ -1,4 +1,4 @@
-# SOLYNTA Whole Genome Dashboard
+# Potato Whole Genome Dashboard
 
 This is a dashboard, built using Django, to display the details of potato whole genomes submitted to SRA run selector after 2018.
 
@@ -18,16 +18,76 @@ To download and install Python3 please refer to https://www.python.org/downloads
 To download and install Django, follow the instructions detailed in this page based on yo : https://docs.djangoproject.com/en/4.2/intro/contributing/.
 
  or follow the following steps (via terminal for unix based operating systems or Mac):
-1. Clone the git django repository:
-  git clone https://github.com/YourGitHubName/django.git
-2. python3 -m venv ~/.virtualenvs/django
-3. source ~/.virtualenvs/djangodev/bin/activate
-4. python3 -m pip install -e /path/to/your/local/clone/django/
+ 
+ 1. Clone the git repositry 
+            
+         git clone https://github.com/YourGitHubName/django.git
+  
+ 2. Create a virtual environment
+
+         python3 -m venv ~/.virtualenvs/django
+         
+ 3. Activate the virtual environment created above
+         
+         source ~/.virtualenvs/djangodev/bin/activate
+         
+ 4. Install the previously cloned django git repository
+ 
+        python3 -m pip install -e /path/to/your/local/clone/django/    #Replace path with the location of the django clone in your local system 
 
 #### Django_crontab
 
-Install the django-crontab via : pip install django-crontab
+Install the django-crontab via : 
+  
+    pip install django-crontab
 
 ## Installing the SOLYNTA Whole Genome Dashboard application
 
+1. To install the SOLYNTA Whole Genome Potato Dashboard, first clone the following repository:
+
+       git clone 
+    
+ 2. Go to the following folder:
+
+        cd potatoGenome_SolyntaTask/potatoGenomeTask
+    Refer https://pypi.org/project/django-crontab/, for further information on django-crontab.
+
 ## Running the SOLYNTA Whole Genome Dashboard application
+
+1. Run the following commands one-by-one:
+   
+       python manage.py makemigrations
+       
+       python sqlmigrate potatoGenome 0001
+
+       python manage.py migrate
+       
+2.  To fetch the necessary data once, run the following command:
+ 
+        python manage.py getGenomes
+        
+3.  To initiate the database refresh on regular intervals, run the following command:
+
+        python manage.py crontab add
+    Currently, running this will initiate a schedule to refresh the database once every 10 mins.
+    This frequency of the refresh can be configured by changing the value in the CRONJOBS section of ```~/potatoGenome_SolyntaTask/potatoGenomTask/settings.py``` file.
+    
+    For further details on how to configure the frequency, please refer to : https://cloud.google.com/scheduler/docs/configuring/cron-job-schedules.
+    
+    Once you have made any changes to the CRONJOBS, please re-run the crontab before procedding further.
+    
+    ```python manage.py crontab add```
+    
+    
+4. Finally, to view the application/ dashboard, run the following command:
+
+        python manage.py runserver
+    Now you can access the application/ potato whole genome dashboard via :
+    
+        http://127.0.0.1:8000/potatoGenome
+        
+ To see when the database was recently refreshed, please refer the log file in :
+        
+        ~/potatoGenome_SolyntaTask/logfile.log
+   Please point the path to the log file by updating the path to a prefered location in the file ```~/potatoGenome_SolyntaTask/potatoGenomTask/settings.py``` in the filename of the LOGGING section
+    
