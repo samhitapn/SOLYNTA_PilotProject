@@ -29,7 +29,7 @@ To download and install Django, follow the instructions detailed in this page ba
          
  3. Activate the virtual environment created above
          
-         source ~/.virtualenvs/djangodev/bin/activate
+         source ~/.virtualenvs/django/bin/activate
          
  4. Install the previously cloned django git repository
  
