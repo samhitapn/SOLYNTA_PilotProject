@@ -56,7 +56,7 @@ Install Biopython via :
     
  2. Go to the following folder:
 
-        cd SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask
+        cd ~/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask
     Refer https://pypi.org/project/django-crontab/, for further information on django-crontab.
 
 ## Running the SOLYNTA Whole Genome Dashboard application
