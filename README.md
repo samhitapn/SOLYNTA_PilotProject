@@ -65,7 +65,7 @@ Install Biopython via :
    
        python manage.py makemigrations
        
-       python sqlmigrate potatoGenome 0001
+       python manage.py sqlmigrate potatoGenome 0001
 
        python manage.py migrate
        
