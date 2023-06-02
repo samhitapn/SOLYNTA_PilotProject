@@ -16,6 +16,6 @@ This is a dashboard, built using Django, to display the details of potato whole 
 ### Django_crontab
 
 
-## Install the SOLYNTA Whole Genome Dashboard application
+## Installing the SOLYNTA Whole Genome Dashboard application
 
-## Run the SOLYNTA Whole Genome Dashboard application
+## Running the SOLYNTA Whole Genome Dashboard application
