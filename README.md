@@ -76,7 +76,7 @@ Install the django-crontab via :
     
     Once you have made any changes to the CRONJOBS, please re-run the crontab before procedding further.
     
-    ```python manage.py crontab add```
+        python manage.py crontab add
     
     
 4. Finally, to view the application/ dashboard, run the following command:
@@ -86,8 +86,12 @@ Install the django-crontab via :
     
         http://127.0.0.1:8000/potatoGenome
         
- To see when the database was recently refreshed, please refer the log file in :
+ ## Additional instructions
+ 
+ 1. To see when the database was recently refreshed, please refer the log file in :
         
         ~/potatoGenome_SolyntaTask/logfile.log
-   Please point the path to the log file by updating the path to a prefered location in the file ```~/potatoGenome_SolyntaTask/potatoGenomTask/settings.py``` in the filename of the LOGGING section
+   Please point the path to the log file by updating the path to a prefered location in the file ```~/potatoGenome_SolyntaTask/potatoGenomTask/settings.py``` in the filename of the LOGGING section.
+   
+ 2. Change the value to ```Entrez.email``` in ```~/potatoGenome_SolyntaTask/potatoGenom/getPotatoGenomes.py``` to provide your own email for reference to NCBI.
     
