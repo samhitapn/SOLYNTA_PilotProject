@@ -74,7 +74,7 @@ Install Biopython via :
               'file': {
                   'level': 'INFO',
                   'class': 'logging.FileHandler',
-                  'filename': '/Users/samhita/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/logfile.log',  # Specify the path to your log file
+                  'filename': '/Users/samhita/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/logfile.log',  # Specify the path to a desired location for your log file
               },
           },
           'root': {
@@ -84,6 +84,9 @@ Install Biopython via :
       }
 
 2. Change the value of ```Entrez.email``` in ```SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenome/getPotatoGenomes.py``` to provide your own email for reference to NCBI.  
+
+       def getGenomeData():
+              Entrez.email="example@gmail.com" ### Change the email id here to your own
 
 3. Run the following commands one-by-one:
    
@@ -117,5 +120,3 @@ Install Biopython via :
     iii. Once you have made the changes, please re-run the below command:
     
         python manage.py crontab add
- 
-
