@@ -65,21 +65,21 @@ Install Biopython via :
    i. Open the file ```SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenomTask/settings.py```.
    ii. Update the ```filename:``` attribute to the desired location of the LOGGING section in the file
    
-      LOGGING = {
-         'version': 1,
-         'disable_existing_loggers': False,
-         'handlers': {
-             'file': {
-                 'level': 'INFO',
-                 'class': 'logging.FileHandler',
-                 'filename': 'SOLYNTA_PilotProject/potatoGenome_SolyntaTask/logfile.log',  # Specify the path to your log file
-             },
-         },
-         'root': {
-             'handlers': ['file'],
-             'level': 'INFO',
-         },
-     }
+       LOGGING = {
+          'version': 1,
+          'disable_existing_loggers': False,
+          'handlers': {
+              'file': {
+                  'level': 'INFO',
+                  'class': 'logging.FileHandler',
+                  'filename': 'SOLYNTA_PilotProject/potatoGenome_SolyntaTask/logfile.log',  # Specify the path to your log file
+              },
+          },
+          'root': {
+              'handlers': ['file'],
+              'level': 'INFO',
+          },
+      }
 2. Run the following commands one-by-one:
    
        python manage.py makemigrations
