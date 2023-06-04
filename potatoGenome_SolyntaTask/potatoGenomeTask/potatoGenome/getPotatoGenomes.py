@@ -60,6 +60,7 @@ def getGenomeData():
                 RUN_ACC = gc.get_xml_parentChild(runTree,"Run","acc")
 
                 # Save the necessary information collected above to the genomeClass object  
+                # This adds new records, if any, to the existing database. Distinct records are identified by genome_Id
                 if not gc.objects.filter(genome_Id=ID).exists():
                     # Create a new record
                    
