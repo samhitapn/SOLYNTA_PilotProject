@@ -14,7 +14,7 @@ from potatoGenome.models import genomeClass as gc
 from datetime import datetime
 
 def getGenomeData():
-    Entrez.email="samhitapn.96@gmail.com"
+    Entrez.email="example@gmail.com" # Please change your email id here
     
     # Get the list of all potato whole genomes submitted after 2018
     query = '"Solanum tuberosum"[Organism] AND "wgs"[Strategy] AND "genomic"[Source] AND "2018"[Publication Date]:"3000"[Publication Date]'
