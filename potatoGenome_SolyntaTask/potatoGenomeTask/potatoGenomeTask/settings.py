@@ -128,21 +128,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CRONJOBS = [
     ('*/2 * * * *', 'django.core.management.call_command', ['getGenomes'])
 ]
-
-# To create custom log file for checking the job runs
-import logging.config
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': True,
-    'handlers': {
-        'file': {
-            'level': 'INFO',
-            'class': 'logging.FileHandler',
-            'filename': '/Users/samhita/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/logfile.log', # Specify the path to a desired location for your log file
-        },
-    },
-    'root': {
-        'handlers': ['file'],
-        'level': 'INFO',
-    },
-}
