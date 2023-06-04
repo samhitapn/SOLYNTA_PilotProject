@@ -102,3 +102,6 @@ Install Biopython via :
         ~/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/logfile.log
    Please point the path to the log file by updating the path to a prefered location in the file ```~/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenomTask/settings.py``` in the filename of the LOGGING section.
     
+ 3. Source the virtual environment whwile running the app every time via
+ 
+        source ~/.virtualenvs/django/bin/activate
