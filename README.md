@@ -57,7 +57,7 @@ Install Biopython via :
     
  2. Navigate to the folder:
 
-        cd /SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask
+        cd SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask
 
 ## Running the Potato Whole Genome Dashboard application
 
@@ -72,7 +72,7 @@ Install Biopython via :
 2. The dashboard is currently set to be refreshed every 10 minutes. 
    The frequency of the refresh can be configured per your need by following the below steps : 
     
-    i.  Open the file ```/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomTask/settings.py``` in an editor
+    i.  Open the file ```SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomTask/settings.py``` in an editor
     ii. Change the value of ```*/10 * * * *``` in the CRONJOBS section as necessary.
            
            CRONJOBS = [
@@ -91,17 +91,17 @@ Install Biopython via :
         http://127.0.0.1:8000/potatoGenome
         
     Note: The app uses DataTables and the example styling provided in : https://datatables.net/examples/data_sources/dom.
-    This can be configured by changing the html template in ```/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenome/templates/potatoGenome/index.html```
+    This can be configured by changing the html template in ```SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenome/templates/potatoGenome/index.html```
         
  ## Additional instructions
  
- 1. Change the value of ```Entrez.email``` in ```/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenome/getPotatoGenomes.py``` to provide your own email for reference to NCBI.
+ 1. Change the value of ```Entrez.email``` in ```SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenome/getPotatoGenomes.py``` to provide your own email for reference to NCBI.
 
  2. To see when the database was recently refreshed, please refer the log file in :
         
-        /SOLYNTA_PilotProject/potatoGenome_SolyntaTask/logfile.log
+        SOLYNTA_PilotProject/potatoGenome_SolyntaTask/logfile.log
    To change the path of the log file, please point to the desired location by updating the path by :
-   i. Open the file ```/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenomTask/settings.py```.
+   i. Open the file ```SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenomTask/settings.py```.
    ii. Update the ```filename``` attribute to the desired location of the LOGGING section
    
       LOGGING = {
@@ -111,7 +111,7 @@ Install Biopython via :
              'file': {
                  'level': 'INFO',
                  'class': 'logging.FileHandler',
-                 'filename': '/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/logfile.log',  # Specify the path to your log file
+                 'filename': 'SOLYNTA_PilotProject/potatoGenome_SolyntaTask/logfile.log',  # Specify the path to your log file
              },
          },
          'root': {
