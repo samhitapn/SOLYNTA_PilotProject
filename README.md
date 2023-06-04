@@ -62,7 +62,9 @@ Install Biopython via :
 ## Running the Potato Whole Genome Dashboard application
 
 1. Change the path of the log file, please point to the desired location by updating the path by :
+   
    i. Open the file ```SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenomTask/settings.py```.
+   
    ii. Update the ```filename:``` attribute to the desired location of the LOGGING section in the file
    
        LOGGING = {
@@ -80,6 +82,7 @@ Install Biopython via :
               'level': 'INFO',
           },
       }
+      
 2. Run the following commands one-by-one:
    
        python manage.py makemigrations
