@@ -126,14 +126,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Defining the frequency of the job/ getGenomes scripts to run
 CRONJOBS = [
-    ('*/10 * * * *', 'django.core.management.call_command', ['getGenomes'])
+    ('*/2 * * * *', 'django.core.management.call_command', ['getGenomes'])
 ]
 
 # To create custom log file for checking the job runs
 import logging.config
 LOGGING = {
     'version': 1,
-    'disable_existing_loggers': False,
+    'disable_existing_loggers': True,
     'handlers': {
         'file': {
             'level': 'INFO',
