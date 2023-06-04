@@ -104,12 +104,14 @@ Install Biopython via :
    The frequency of the refresh can be configured per your need by following the below steps : 
     
     i.  Open the file ```SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomTask/settings.py``` in an editor.
+    
     ii. Change the value of ```*/10 * * * *``` in the CRONJOBS section as necessary.
            
            CRONJOBS = [
             ('*/10 * * * *', 'django.core.management.call_command', ['getGenomes'])
            ]
       For further details on how to configure this frequency, please refer to : https://cloud.google.com/scheduler/docs/configuring/cron-job-schedules.
+    
     iii. Once you have made the changes, please re-run the below command:
     
         python manage.py crontab add
