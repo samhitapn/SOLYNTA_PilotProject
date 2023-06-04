@@ -57,43 +57,21 @@ Install Biopython via :
 
 ## Running the Potato Whole Genome Dashboard application
 
-1. Change the path of the log file, please point to the desired location by updating the path by :
-   
-   i. Open the file ```SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenomeTask/settings.py```.
-   
-   ii. Update the ```filename:``` attribute to the desired location of the LOGGING section in the file
-   
-       LOGGING = {
-          'version': 1,
-          'disable_existing_loggers': False,
-          'handlers': {
-              'file': {
-                  'level': 'INFO',
-                  'class': 'logging.FileHandler',
-                  'filename': '/Users/samhita/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/logfile.log',  # Specify the path to a desired location for your log file
-              },
-          },
-          'root': {
-              'handlers': ['file'],
-              'level': 'INFO',
-          },
-      }
-
-2. Change the value of ```Entrez.email``` in ```SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenome/getPotatoGenomes.py``` to provide your own email for reference to NCBI.  
+1. Change the value of ```Entrez.email``` in ```SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenome/getPotatoGenomes.py``` to provide your own email for reference to NCBI.  
 
        def getGenomeData():
               Entrez.email="example@gmail.com" ### Change the email id here to your own
-3. Navigate to the folder:
+2. Navigate to the folder:
 
         cd SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask
         
-4. Run the following commands one-by-one:
+3. Run the following commands one-by-one:
    
        python manage.py makemigrations
 
        python manage.py migrate
 
-5. To view the application/ dashboard, run the following command:
+4. To view the application/ dashboard, run the following command:
 
         python manage.py runserver
     Now you can view the application/ potato whole genome dashboard via :
@@ -103,7 +81,7 @@ Install Biopython via :
     Note: The app uses DataTables and the example styling provided in : https://datatables.net/examples/data_sources/dom.
     This can be configured by changing the html template in ```SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenome/templates/potatoGenome/index.html```
     
-6. The dashboard is currently set to be refreshed every 10 minutes. Every time the database is refreshed, its details are logged into the log file you pointed to above.
+5. The dashboard is currently set to be refreshed every 10 minutes. Every time the database is refreshed, its details are logged into the log file you pointed to above.
 
    The frequency of the refresh can be configured per your need by following the below steps : 
     
