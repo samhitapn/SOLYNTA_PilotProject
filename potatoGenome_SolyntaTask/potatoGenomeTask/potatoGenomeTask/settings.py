@@ -126,5 +126,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Defining the frequency of the job/ getGenomes scripts to run
 CRONJOBS = [
-    ('*/2 * * * *', 'django.core.management.call_command', ['getGenomes'])
+    ('*/10 * * * *', 'django.core.management.call_command', ['getGenomes'])
 ]
