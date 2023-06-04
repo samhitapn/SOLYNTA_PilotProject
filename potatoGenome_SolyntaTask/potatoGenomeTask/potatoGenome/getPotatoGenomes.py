@@ -22,10 +22,7 @@ def getGenomeData():
                                         term = query)
     potatoGenomes_dataAll = Entrez.read(potatoGenomes_list)
     
-    # Initialise array to collect all the genomes
-    GENOMES_LIST = []
-
-    # Get all the necessary data for all the resulting genomes filtered 
+    # Get all the necessary data for all the resulting potato genome records queried above
     for i in potatoGenomes_dataAll['IdList']:
          summary = Entrez.esummary(db = "sra",id = i)
          data = Entrez.parse(summary)
