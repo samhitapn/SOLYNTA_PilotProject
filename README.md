@@ -59,7 +59,7 @@ Install Biopython via :
 
         cd ~/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask
 
-## Running the SOLYNTA Whole Genome Dashboard application
+## Running the Potato Whole Genome Dashboard application
 
 1. Run the following commands one-by-one:
    
@@ -100,8 +100,26 @@ Install Biopython via :
  2. To see when the database was recently refreshed, please refer the log file in :
         
         ~/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/logfile.log
-   Please point the path to the log file by updating the path to a prefered location in the file ```~/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenomTask/settings.py``` in the filename of the LOGGING section.
+   TO change the path of the log file, please point to the desired location by updating the path by :
+   i. Open the file ```~/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenomTask/settings.py```.
+   ii. Update the ```filename``` attribute to the desired location of the LOGGING section
+   
+      LOGGING = {
+         'version': 1,
+         'disable_existing_loggers': False,
+         'handlers': {
+             'file': {
+                 'level': 'INFO',
+                 'class': 'logging.FileHandler',
+                 'filename': '~/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/logfile.log',  # Specify the path to your log file
+             },
+         },
+         'root': {
+             'handlers': ['file'],
+             'level': 'INFO',
+         },
+     }
     
- 3. Source the virtual environment whwile running the app every time via
+ 3. Source the virtual environment whwile running the app every time via:
  
         source ~/.virtualenvs/django/bin/activate
