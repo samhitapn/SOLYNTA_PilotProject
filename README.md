@@ -61,48 +61,9 @@ Install Biopython via :
 
 ## Running the Potato Whole Genome Dashboard application
 
-1. Run the following commands one-by-one:
-   
-       python manage.py makemigrations
-       
-       python manage.py sqlmigrate potatoGenome 0001
-
-       python manage.py migrate
-    
-2. The dashboard is currently set to be refreshed every 10 minutes. 
-   The frequency of the refresh can be configured per your need by following the below steps : 
-    
-    i.  Open the file ```SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomTask/settings.py``` in an editor
-    ii. Change the value of ```*/10 * * * *``` in the CRONJOBS section as necessary.
-           
-           CRONJOBS = [
-            ('*/10 * * * *', 'django.core.management.call_command', ['getGenomes'])
-           ]
-      For further details on how to configure this frequency, please refer to : https://cloud.google.com/scheduler/docs/configuring/cron-job-schedules.
-    iii. Once you have made the changes, please re-run the below command:
-    
-        python manage.py crontab add
-        
-3. Finally, to view the application/ dashboard, run the following command:
-
-        python manage.py runserver
-    Now you can access the application/ potato whole genome dashboard via :
-    
-        http://127.0.0.1:8000/potatoGenome
-        
-    Note: The app uses DataTables and the example styling provided in : https://datatables.net/examples/data_sources/dom.
-    This can be configured by changing the html template in ```SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenome/templates/potatoGenome/index.html```
-        
- ## Additional instructions
- 
- 1. Change the value of ```Entrez.email``` in ```SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenome/getPotatoGenomes.py``` to provide your own email for reference to NCBI.
-
- 2. To see when the database was recently refreshed, please refer the log file in :
-        
-        SOLYNTA_PilotProject/potatoGenome_SolyntaTask/logfile.log
-   To change the path of the log file, please point to the desired location by updating the path by :
+1. Change the path of the log file, please point to the desired location by updating the path by :
    i. Open the file ```SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenomTask/settings.py```.
-   ii. Update the ```filename``` attribute to the desired location of the LOGGING section
+   ii. Update the ```filename:``` attribute to the desired location of the LOGGING section in the file
    
       LOGGING = {
          'version': 1,
@@ -119,6 +80,47 @@ Install Biopython via :
              'level': 'INFO',
          },
      }
+2. Run the following commands one-by-one:
+   
+       python manage.py makemigrations
+       
+       #python manage.py sqlmigrate potatoGenome 0001
+
+       python manage.py migrate
+    
+3. The dashboard is currently set to be refreshed every 10 minutes. Every time the database is refreshed, its details are logged into the log file you pointed to in point 1 above.
+
+   The frequency of the refresh can be configured per your need by following the below steps : 
+    
+    i.  Open the file ```SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomTask/settings.py``` in an editor
+    ii. Change the value of ```*/10 * * * *``` in the CRONJOBS section as necessary.
+           
+           CRONJOBS = [
+            ('*/10 * * * *', 'django.core.management.call_command', ['getGenomes'])
+           ]
+      For further details on how to configure this frequency, please refer to : https://cloud.google.com/scheduler/docs/configuring/cron-job-schedules.
+    iii. Once you have made the changes, please re-run the below command:
+    
+        python manage.py crontab add
+        
+4. Finally, to view the application/ dashboard, run the following command:
+
+        python manage.py runserver
+    Now you can access the application/ potato whole genome dashboard via :
+    
+        http://127.0.0.1:8000/potatoGenome
+        
+    Note: The app uses DataTables and the example styling provided in : https://datatables.net/examples/data_sources/dom.
+    This can be configured by changing the html template in ```SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenome/templates/potatoGenome/index.html```
+        
+ ## Additional instructions
+ 
+ 1. Change the value of ```Entrez.email``` in ```SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenome/getPotatoGenomes.py``` to provide your own email for reference to NCBI.
+
+ 2. To see when the database was recently refreshed, please refer the log file in :
+        
+        SOLYNTA_PilotProject/potatoGenome_SolyntaTask/logfile.log
+   
     
  3. Source the virtual environment whwile running the app every time via:
  
