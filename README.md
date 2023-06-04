@@ -100,7 +100,7 @@ Install Biopython via :
  2. To see when the database was recently refreshed, please refer the log file in :
         
         ~/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/logfile.log
-   TO change the path of the log file, please point to the desired location by updating the path by :
+   To change the path of the log file, please point to the desired location by updating the path by :
    i. Open the file ```~/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenomTask/settings.py```.
    ii. Update the ```filename``` attribute to the desired location of the LOGGING section
    
