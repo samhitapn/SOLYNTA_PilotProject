@@ -41,6 +41,7 @@ To download and install Django, follow the instructions detailed in this page ba
 Install the django-crontab via : 
   
     pip install django-crontab
+   Refer https://pypi.org/project/django-crontab/, for further information on django-crontab.
     
 #### Biopython
 
@@ -57,7 +58,6 @@ Install Biopython via :
  2. Go to the following folder:
 
         cd ~/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask
-    Refer https://pypi.org/project/django-crontab/, for further information on django-crontab.
 
 ## Running the SOLYNTA Whole Genome Dashboard application
 
@@ -68,36 +68,37 @@ Install Biopython via :
        python manage.py sqlmigrate potatoGenome 0001
 
        python manage.py migrate
-
+    
+2. The dashboard is currently set to be refreshed every 10 minutes. 
+   The frequency of the refresh can be configured per your need by following the below steps : 
+    
+    i.  Open the file ```~/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomTask/settings.py``` in an editor
+    ii. Change the value of ```*/10 * * * *``` in the CRONJOBS section as necessary.
+           
+           CRONJOBS = [
+            ('*/10 * * * *', 'django.core.management.call_command', ['getGenomes'])
+           ]
+      For further details on how to configure this frequency, please refer to : https://cloud.google.com/scheduler/docs/configuring/cron-job-schedules.
+    iii. Once you have made the changes, please re-run the below command:
+    
+        python manage.py crontab add
         
-3.  To initiate the database refresh on regular intervals, run the following command:
-
-        python manage.py crontab add
-    Currently, running this will initiate a schedule to refresh the database once every 10 mins.
-    This frequency of the refresh can be configured by changing the value in the CRONJOBS section of ```~/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomTask/settings.py``` file.
-    
-    For further details on how to configure the frequency, please refer to : https://cloud.google.com/scheduler/docs/configuring/cron-job-schedules.
-    
-    Once you have made any changes to the CRONJOBS, please re-run the crontab before procedding further.
-    
-        python manage.py crontab add
-    
-    
-4. Finally, to view the application/ dashboard, run the following command:
+3. Finally, to view the application/ dashboard, run the following command:
 
         python manage.py runserver
     Now you can access the application/ potato whole genome dashboard via :
     
         http://127.0.0.1:8000/potatoGenome
-    The app uses DataTables and the example styling provided in : https://datatables.net/examples/data_sources/dom.
-    This can be updated by changing the html template provided in ```~/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenome/templates/potatoGenome/index.html```
+        
+    Note: The app uses DataTables and the example styling provided in : https://datatables.net/examples/data_sources/dom.
+    This can be configured by changing the html template in ```~/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenome/templates/potatoGenome/index.html```
         
  ## Additional instructions
  
- 1. To see when the database was recently refreshed, please refer the log file in :
+ 1. Change the value of ```Entrez.email``` in ```~/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenome/getPotatoGenomes.py``` to provide your own email for reference to NCBI.
+
+ 2. To see when the database was recently refreshed, please refer the log file in :
         
         ~/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/logfile.log
    Please point the path to the log file by updating the path to a prefered location in the file ```~/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenomTask/settings.py``` in the filename of the LOGGING section.
-   
- 2. Change the value of ```Entrez.email``` in ```~/SOLYNTA_PilotProject/potatoGenome_SolyntaTask/potatoGenomeTask/potatoGenome/getPotatoGenomes.py``` to provide your own email for reference to NCBI.
     
